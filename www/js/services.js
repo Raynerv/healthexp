@@ -1,5 +1,21 @@
 angular.module('starter.services', [])
 
+.factory('Beacons', function() {
+  var beacons = [
+    {id : "beacon1"},
+    {id : "beacon2"}
+  ];
+  return {
+    all: function() {
+      return beacons;
+    },
+    get: function(beaconId) {
+      // Simple index lookup
+      return beacons[beaconId];
+    }
+  }
+})
+
 /**
  * A simple example service that returns some data.
  */

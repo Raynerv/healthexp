@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, Beacons) {
+  $scope.beacons = Beacons.all();
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {
