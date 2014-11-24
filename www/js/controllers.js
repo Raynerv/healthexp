@@ -1,20 +1,21 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $console, $ionicPlatform) {
+  console.log('Loaded DashCtrl successfully.');
   $ionicPlatform.ready(function() {
-    $console.log('Loaded DashCtrl successfully.');
+    console.log('Ionic platform ready');
     $scope.region = {
       uuid: null,
       identifier: "DefaultRegion"
     };
     $scope.beacons = {};
-    var beaconRegion = cordova.plugins.locationManager.Regions.fromJson($scope.region).fail($console.error)
+    var beaconRegion = cordova.plugins.locationManager.Regions.fromJson($scope.region).fail(console.error)
       .done();
     cordova.plugins.locationManager.startRangingBeaconsInRegion(beaconRegion);
     var delegate = new cordova.plugins.locationManager.Delegate();
 
     delegate.didRangeBeaconsInRegion = function(pluginResult) {
-      $console.log('didRangeBeaconsInRegion()');
+      console.log('didRangeBeaconsInRegion()');
       $scope.beacons = pluginResult;
     };
 
