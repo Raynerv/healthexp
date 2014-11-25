@@ -15,6 +15,7 @@ var startScanForBeacons = function(rootScope) {
   var delegate = new cordova.plugins.locationManager.Delegate();
 
   delegate.didExitRegion = function(pluginResult) {
+    console.log('didExitRegion:', pluginResult);
     //window.alert('[DOM] didExitRegion: ' + JSON.stringify(pluginResult));
     //cordova.plugins.locationManager.appendToDeviceLog('[DOM] didExitRegion: ' + JSON.stringify(pluginResult));
     //console.log(JSON.stringify(pluginResult));
@@ -23,6 +24,7 @@ var startScanForBeacons = function(rootScope) {
   };
 
   delegate.didEnterRegion = function(pluginResult) {
+    console.log('didEnterRegion:', pluginResult);
     //window.alert('[DOM] didEnterRegion: ' + JSON.stringify(pluginResult));
     //cordova.plugins.locationManager.appendToDeviceLog('[DOM] didEnterRegion: ' + JSON.stringify(pluginResult));
     //console.log(JSON.stringify(pluginResult));
@@ -31,6 +33,7 @@ var startScanForBeacons = function(rootScope) {
   };
 
   delegate.didDetermineStateForRegion = function(pluginResult) {
+    console.log('didDetermineStateForRegion:', pluginResult);
     //window.alert('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
     //cordova.plugins.locationManager.appendToDeviceLog('[DOM] didDetermineStateForRegion: ' + JSON.stringify(pluginResult));
     //console.log(JSON.stringify(pluginResult));
@@ -44,6 +47,7 @@ var startScanForBeacons = function(rootScope) {
   };
 
   delegate.didRangeBeaconsInRegion = function(pluginResult) {
+    console.log('didRangeBeaconsInRegion:', pluginResult);
     //window.alert('[DOM] didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult));
     //console.log(JSON.stringify(pluginResult));
     //console.log(pluginResult);
